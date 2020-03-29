@@ -38,3 +38,16 @@ def get_fundamentals(ticker):
     is_ = json_to_df(is_json)
     cf = json_to_df(cf_json)
     return bs, is_, cf
+
+def get_keystats(ticker):
+    """
+    Get key stats from Yahoo finance.
+    :param ticker: ticker of the company
+    :return: a panda data series
+    """
+    url = 'https://finance.yahoo.com/quote/%s/key-statistics'%ticker
+    with request.urlopen(url) as response:
+        html = response.read()
+        key_stats = html.split(b'"QuoteSummaryStore":')[1].split(b',"financialsTemplate"')[0]+b'}'
+    key_stats = json.loads(key_stats)['defaultKeyStatistics']
+    return  pd.DataFrame(key_stats).transpose()['raw'].dropna()
