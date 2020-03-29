@@ -7,11 +7,16 @@ This is a simple script to extract fundamental data from yahoo finance company p
 `bs_, is_, cf_ = get_fundamentals('AAPL')`
 
 The function above returns 3 pandas `dataframes` that look like this
-!['statement'](screenshot.png)
+!['statement'](screenshots/screenshot.png)
 
 
 ### Get Key Statistics
-`key_stat = get_keystats('AAPL)`
+`key_stat = get_keystats('AAPL)`. The output looks like this-
 
-The output looks like this
-!['keystats'](screenshot2.png)
+!['keystats'](screenshots/screenshot2.png)
+
+## Get Competitors' List
+
+`peers = get_competitors('AAPL')` . The output looks like this -
+
+!['keystats'](screenshots/screenshot3.png)
