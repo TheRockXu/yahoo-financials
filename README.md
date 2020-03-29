@@ -18,6 +18,6 @@ The function above returns 3 pandas `dataframes` that look like this
 
 ## Get Competitors
 
-`peers = get_comeptitors`. The output looks like this
+`peers = get_comeptitors('AAPL)`. The output looks like this
 
 !['competitors'](screenshots/screenshot3.png)
