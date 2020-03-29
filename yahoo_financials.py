@@ -56,6 +56,11 @@ def get_keystats(ticker):
 
 
 def get_competitors(ticker):
+    """
+    get competitors list by exctracting yahoo's recommendations
+    :param ticker:
+    :return:
+    """
     url = 'https://finance.yahoo.com/quote/%s/analysis' % ticker
     with request.urlopen(url) as response:
         html = response.read()
